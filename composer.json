@@ -1,0 +1,11 @@
+{
+    "name": "tinong/lab4",
+    "autoload": {
+        "psr-4": {
+            "Tinong\\Lab4\\": "src/"
+        }
+    },
+    "require": {
+        "envms/fluentpdo": "^2.2"
+    }
+}
