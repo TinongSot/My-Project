@@ -1,7 +1,5 @@
 <?php
-
-include "vendor/autoload.php";
-
+include '../vendor/autoload.php';
 $host = "localhost";
 $databaseName = "listname";
 $username = "root";

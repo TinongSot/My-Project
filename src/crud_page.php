@@ -1,6 +1,5 @@
 <?php
 include 'db_connect.php';
-
 $query = $fluent->from('products'); 
 
 ?>
