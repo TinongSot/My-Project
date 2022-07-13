@@ -10,7 +10,7 @@
 
 $server = "localhost";
 $username = "root";
-$password = "";
+$password = "12345";
 $database = "listname";
 
 

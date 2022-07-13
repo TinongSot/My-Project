@@ -86,19 +86,19 @@
                             $sql = "INSERT INTO users(image,username,gender,email,class,password) VALUES('$new_img','$username','$gender','$email','$class','$password')";
                             $result = mysqli_query($conn,$sql);
                             if(!$result){
-                                include 'error_popup';
+                                include 'error_popup.php';
                             }
                             else{
-                                // include 'trying.php';
-                            // header("location: http://localhost/myphp/Registration%20Form/table.php");
-                            // HERE YOU CAN PUT THE LOCATION OF OUR HOME PAGE SO THAT AFTER WE REGISTER THE HOME PAGE WILL BE DISPLAY
+                            
+                            header("location: index.php");
+                            
                             }
                 
                     } 
                   
                 }
                 else { ?>
-                    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                     <script type="text/javascript">
                     $(function(){
                         alert('Failed. Password is not matched. Please fill in  again!!');

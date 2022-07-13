@@ -1,12 +1,24 @@
 <?php
+session_start();
 include 'db_connect.php';
-$query = $fluent->from('products'); 
+
 if (isset($_POST['submit'])) {
   $name = $_POST['name'];
   $amount = $_POST['amount'];
   $price = $_POST['price'];
+  $id = $_SESSION['id'];
 
-  $sql = "INSERT INTO products (name, amount, price) VALUES ('$name', '$amount', '$price')";
+  // $sql = "INSERT INTO products (name, amount, price) VALUES ('$name', '$amount', '$price')";
+  $value = array('name' => $name, 'user_id' => $id, 'amount' => $amount, 'price' => $price);
+  $query = $fluent->insertInto('products')->values($value)->execute();
+
+  if ($query) {
+    $_SESSION['success'] = "Create successfully";
+    header("Location: crud_page.php");
+  } else {
+    $_SESSION['error'] = "Unknown error occurred";
+    header("Location: create_page.php");
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -20,7 +32,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     
-<div class=" bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8">
+<div class="min-h-screen bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-md">
     <h2 class=" text-center text-3xl font-bold text-gray-900">Create</h2>
   </div>
@@ -38,19 +50,19 @@ if (isset($_POST['submit'])) {
         <div>
           <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
           <div class="mt-1">
-            <input id="amount" name="amount" type="amount" autocomplete="amount" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+            <input id="amount" name="amount" type="number" min="1" autocomplete="amount" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
           </div>
         </div>
 
 <div>
   <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
   <div class="mt-1">
-    <input id="price" name="price" type="price" autocomplete="price" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+    <input id="price" name="price" type="number" min="0.00" step="0.01" autocomplete="price" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
   </div>
 </div>
 
         <div>
-          <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">CREATE</button>
+          <button name="submit" type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">CREATE</button>
         </div>
       </form>
     </div>

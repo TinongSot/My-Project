@@ -20,20 +20,20 @@ $query = $fluent->from('products');
     <title>View</title>
 </head>
 
-<body>
-    <div class=" bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8">
+<body class="bg-gray-200">
+    <div class=" container mt-5 ">
         
-        <div class="sm:mx-auto sm:w-full sm:max-w-md flex justify-between items-baseline">
+        <div class="flex justify-between">
             <div>
-                <h1 class="text-pink-600 text-4xl">Product</h1>
+                <h1 class="text-pink-600 text-4xl font-bold">Product</h1>
             </div>
-            <div><a href="create_page.php" class="font-medium border border-transparent text-white hover:text-green-600 hover:border-green-600 hover:bg-white px-3 py-1 bg-green-600 rounded-xl mr-3">ADD</a></div>
+            <div><a href="create_page.php" class="font-medium  text-white px-3 py-1 bg-green-600 rounded-xl mr-3  hover:opacity-75">ADD</a></div>
         </div>
 
            <div class="container mt-5">
         <div class="row">
             <table id="example" class="table table-striped" style="width:100%">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead class="bg-slate-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
                                 #
@@ -61,15 +61,15 @@ $query = $fluent->from('products');
                         foreach ($query as $row) {
                             $i++;
                         ?>
-                            <tr class="bg-white dark:bg-gray-800">
+                            <tr class="bg-white ">
                                 <td class="px-6 py-4"><?php echo $i ?></td>
                                 <td class="px-6 py-4"><?php echo htmlspecialchars($row['name']) ?></td>
                                 <td class="px-6 py-4"><?php echo htmlspecialchars($row['user_id']); ?></td>
                                 <td class="px-6 py-4"><?php echo htmlspecialchars($row['amount']); ?></td>
                                 <td class="px-6 py-4"><?php echo htmlspecialchars($row['price']); ?></td>
                                 <td class="px-6 py-4">
-                                    <a href="update.php?id=<?= $row['id'] ?>" class="font-medium border border-transparent text-white hover:text-green-600 hover:border-green-600 hover:bg-white px-3 py-1 bg-green-600 rounded-xl mr-3">Edit</a>
-                                    <a href="delete.php?id=<?= $row['id'] ?>" class="font-medium border border-transparent text-white hover:text-red-600 hover:border-red-600 hover:bg-white px-3 py-1 bg-red-600 rounded-xl">Delete</a>
+                                    <a href="update.php?id=<?= $row['id'] ?>" class="font-medium  text-white  px-3 py-1 bg-green-600 rounded-xl mr-3 hover:opacity-75">Edit</a>
+                                    <a href="delete.php?id=<?= $row['id'] ?>" class="deleteBtn font-medium  text-white  px-3 py-1 bg-red-600 rounded-xl hover:opacity-75">Delete</a>
                                 </td>
                             </tr>
                         <?php } ?>

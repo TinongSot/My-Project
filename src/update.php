@@ -59,7 +59,7 @@ if (isset($_POST['update'])) {
       <div>
         <h2 class="mt-6 text-center text-3xl font-bold text-gray-900">Edit</h2>
       </div>
-      <div><a href="index.php" class="font-medium border border-transparent text-white hover:text-green-600 hover:border-green-600 hover:bg-white px-3 py-1 bg-green-600 rounded-xl mr-3">Back</a></div>
+      <div><a href="crud_page.php" class="font-medium border border-transparent text-white hover:text-green-600 hover:border-green-600 hover:bg-white px-3 py-1 bg-green-600 rounded-xl mr-3">Back</a></div>
     </div>
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">

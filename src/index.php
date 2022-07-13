@@ -31,18 +31,17 @@
                         <label for="_password">Password</label>
                         <input class="form-control mb-3" type="password" name="_password" required>
 
-                        <label for="_try">Major    </label>
-                        <select name="M" id="M" class="form-control mb-3">
-                            <option value="CS">Computer Science</option>
-                            <option value="TN">Telecom and Network</option>
-                            <option value="EC">E-Comerce</option>
-                        </select>
-
                     </div>
                     <div class="row justify-content-center"><input class="btn bg p-3 custom center-block" type="submit" name="login" value="LOG IN"></div>
                 </div>
             </div>
         </form>
+        <div class="sm:mx-auto sm:w-full sm:max-w-md mt-5">
+            <p class="mt-2 text-center text-sm text-gray-600 max-w">
+                Don't have an account?
+                <a href="Register.php" class="font-medium text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500">Create Account</a>
+            </p>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
