@@ -1,5 +1,8 @@
 <?php
+session_start();
 include 'db_connect.php';
+include 'script.php';
+
 $query = $fluent->from('products'); 
 
 ?>
@@ -26,11 +29,7 @@ $query = $fluent->from('products');
             </div>
             <div><a href="create_page.php" class="font-medium border border-transparent text-white hover:text-green-600 hover:border-green-600 hover:bg-white px-3 py-1 bg-green-600 rounded-xl mr-3">ADD</a></div>
         </div>
-        <?php if (isset($_GET['success'])) { ?>
-		   <div class=" text-green-600 border border-green-500">
-			  <?php echo $_GET['success']; ?>
-		    </div>
-		   <?php } ?>
+
            <div class="container mt-5">
         <div class="row">
             <table id="example" class="table table-striped" style="width:100%">
@@ -89,3 +88,44 @@ $query = $fluent->from('products');
 </body>
 
 </html>
+
+<script>
+    $('.deleteBtn').on('click', function(e) {
+        e.preventDefault();
+        var self = $(this);
+        console.log(self.data('title'));
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            iconColor: "#FDDA0D",
+            showCancelButton: true,
+            confirmButtonColor: '#14BD25',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.href = self.attr('href');
+            }
+        })
+
+    })
+</script>
+
+<?php
+if (isset($_SESSION['success'])) {
+?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            iconColor: "#4DD817 ",
+            title: "<?php echo $_SESSION['success'] ?>",
+            showConfirmButton: false,
+            timer: 1800
+        });
+    </script>
+
+<?php
+
+    unset($_SESSION['success']);
+}

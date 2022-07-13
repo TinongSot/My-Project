@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if(isset($_GET['id'])){
     include "db_connect.php";
@@ -13,10 +14,12 @@ if(isset($_GET['id'])){
 
     $query = $fluent->deleteFrom('products')->where('id', $id)->execute();
     if($query){
-        header("Location: index.php?success=successfully updated");
+        $_SESSION['success'] = "Delete successfully";
+        header("Location: crud_page.php");
     }else {
-      header("Location: delete.php?id=$id&error=unknown error occurred");
+        $_SESSION['error'] = "Unknown error occurred";
+        header("Location: delete.php");
    }
 }else{
-    header("Location: index.php");
+    header("Location: crud_page.php");
 }
