@@ -1,15 +1,11 @@
 <?php
-include '../vendor/autoload.php';
-$host = "localhost";
-$databaseName = "listname";
-$username = "root";
-$password = "";
+require '../vendor/autoload.php';
+require_once "db_config.php";
 
 $sdn = "mysql:dbname=$databaseName";
 
 try {
     $conn = new PDO($sdn, $username, $password);
-    // set the PDO error mode to exception
     $fluent = new \Envms\FluentPDO\Query($conn);
   } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();

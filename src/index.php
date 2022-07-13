@@ -14,24 +14,24 @@ include "crud_page.php";
 <body>
 <div class="min-h-screen bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8">
 <?php
-  $email = $POST['email'];
-  $password = $POST['password'];
+  // $email = $POST['email'];
+  // $password = $POST['password'];
 
-  $email = stripslashes($email);
-  $password = stripslashes($password);
-  $email = mysqli_real_escape_string($email);
-  $password = mysqli_real_escape_string($password);
+  // $email = stripslashes($email);
+  // $password = stripslashes($password);
+  // $email = mysqli_real_escape_string($email);
+  // $password = mysqli_real_escape_string($password);
 
-  mysql_connect("localhost", "root", "");
-  mysql_select_db("listname");
+  // mysql_connect("localhost", "root", "");
+  // mysql_select_db("listname");
 
-  $result = mysql_query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
-  $row = mysql_fetch_array($result);
-  if ($row['email'] == $email && $row['password'] == $password) {
-    echo "Login successful";
-  } else {
-    echo "Login failed";
-  }
+  // $result = mysql_query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+  // $row = mysql_fetch_array($result);
+  // if ($row['email'] == $email && $row['password'] == $password) {
+  //   echo "Login successful";
+  // } else {
+  //   echo "Login failed";
+  // }
 ?>
   <div class="sm:mx-auto sm:w-full sm:max-w-md">
     <h2 class="mt-6 text-center text-3xl font-bold text-gray-900">Login</h2>
