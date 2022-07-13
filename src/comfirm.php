@@ -38,12 +38,8 @@
         $result = $conn->query($query);
         if ($result->num_rows > 0) {
           while($data = $result->fetch_assoc()) { 
-              if(($_username==$data['username'])&&($_email==$data['email'])&&($_password==$data['password'])){?>
-                <script type="text/javascript">
-                        $(function(){
-                            alert('Your data is matched. You have successfully loged in.');
-                        });
-                </script>
+              if(($_username==$data['username'])&&($_email==$data['email'])&&($_password==$data['password'])){
+                header("location: crud_page.php");?>
                 <!-- <div class="row justify-content-center mt-5">
                 <table  cellspacing="0" cellpadding="10" class="table table-bordered w-75" style="border-color:green;">
                 <div>
@@ -71,7 +67,7 @@
                <?php exit();
               }
           }
-           header("location: http://localhost/myphp/login/error_popup.php");
+           header("location: error_popup.php");
        }
      }
 ?>
