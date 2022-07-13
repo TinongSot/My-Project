@@ -1,74 +1,50 @@
-<?php
-include 'db_connect.php';
-include "crud_page.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>LOG IN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+    .custom {
+    width: 100px !important;
+}
+    .bg{ background-color: #98FF98; text-color: #3A3B3C}
+</style>
 </head>
 <body>
-<div class="min-h-screen bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8">
-<?php
-  // $email = $POST['email'];
-  // $password = $POST['password'];
-
-  // $email = stripslashes($email);
-  // $password = stripslashes($password);
-  // $email = mysqli_real_escape_string($email);
-  // $password = mysqli_real_escape_string($password);
-
-  // mysql_connect("localhost", "root", "");
-  // mysql_select_db("listname");
-
-  // $result = mysql_query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
-  // $row = mysql_fetch_array($result);
-  // if ($row['email'] == $email && $row['password'] == $password) {
-  //   echo "Login successful";
-  // } else {
-  //   echo "Login failed";
-  // }
-?>
-  <div class="sm:mx-auto sm:w-full sm:max-w-md">
-    <h2 class="mt-6 text-center text-3xl font-bold text-gray-900">Login</h2>
-  </div>
-
-  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-    <div class="bg-white py-8 px-6 shadow-md rounded-lg sm:px-10">
-      <form class="mb-0 space-y-6" action="crud_page.php" method="POST">
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
-          <div class="mt-1">
-            <input id="email" name="email" type="email" autocomplete="email" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
-          </div>
-          <?="<p class='text-danger'>$emailErr</p>";?>
-        </div>
-
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-          <div class="mt-1">
-            <input id="password" name="password" type="password" autocomplete="current-password" required class="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
-          </div>
-          <?="<p class='text-danger'>$pwdErr</p>";?>
-        </div>
-
-        <div>
-          <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">LOGIN</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="sm:mx-auto sm:w-full sm:max-w-md mt-5">
-            <p class="mt-2 text-center text-sm text-gray-600 max-w">
-                Don't have an account?
-                <a href="#" class="font-medium text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500">Create Account</a>
-            </p>
-        </div>
 </div>
+    <div class="justify-content-center mt-5 ">
+        <form action="comfirm.php"  method = "POST" >
+            <div class="container">
+                <h2 class="row justify-content-center">Log In</h2>
+                <div class="row justify-content-center">
+                    <div class="col-sm-3">
+                        <hr class="mb-3">
+                        <label for="_username">Username</label>
+                        <input class="form-control mb-3" type="text" name="_username" required>
+
+                        <label for="_email">Email</label>
+                        <input class="form-control mb-3" type="email" name="_email" required>
+
+                        <label for="_password">Password</label>
+                        <input class="form-control mb-3" type="password" name="_password" required>
+
+                        <label for="_try">Major    </label>
+                        <select name="M" id="M" class="form-control mb-3">
+                            <option value="CS">Computer Science</option>
+                            <option value="TN">Telecom and Network</option>
+                            <option value="EC">E-Comerce</option>
+                        </select>
+
+                    </div>
+                    <div class="row justify-content-center"><input class="btn bg p-3 custom center-block" type="submit" name="login" value="LOG IN"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>
 </html>

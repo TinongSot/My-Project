@@ -5,5 +5,5 @@
             });
 </script>
 <?php
- include 'login.php';
+ include 'index.php';
 ?>

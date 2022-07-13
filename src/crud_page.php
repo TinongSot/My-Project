@@ -21,7 +21,7 @@ $query = $fluent->from('products');
             <div>
                 <h1 class="text-pink-600 text-4xl">Product</h1>
             </div>
-            <div><a href="index.php" class="font-medium border border-transparent text-white hover:text-green-600 hover:border-green-600 hover:bg-white px-3 py-1 bg-green-600 rounded-xl mr-3">ADD</a></div>
+            <div><a href="create_page.php" class="font-medium border border-transparent text-white hover:text-green-600 hover:border-green-600 hover:bg-white px-3 py-1 bg-green-600 rounded-xl mr-3">ADD</a></div>
         </div>
         <?php if (isset($_GET['success'])) { ?>
 		   <div class=" text-green-600 border border-green-500">

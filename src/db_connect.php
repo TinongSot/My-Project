@@ -1,7 +1,10 @@
 <?php
 require '../vendor/autoload.php';
-require_once "db_config.php";
-
+//require_once "db_config.php";
+$host = "localhost";
+$databaseName = "listname";
+$username = "root";
+$password = "";
 $sdn = "mysql:dbname=$databaseName";
 
 try {
