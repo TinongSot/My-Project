@@ -11,7 +11,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "registration";
+$database = "listname";
 
 
 $conn = mysqli_connect($server,$username,$password,$database);

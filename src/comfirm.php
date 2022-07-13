@@ -34,7 +34,7 @@
         $_email      = $_POST['_email'];
         $_password   = $_POST['_password'];
         include('conf.php');
-        $query = "SELECT image,username, email, gender, class, password FROM withimage";
+        $query = "SELECT image,username, email, gender, class, password FROM users";
         $result = $conn->query($query);
         if ($result->num_rows > 0) {
           while($data = $result->fetch_assoc()) { 

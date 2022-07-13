@@ -83,8 +83,7 @@
                         $new_img= uniqid("IMG-",true).".".$img_ex_lc;
                         $img_path = 'uploads/'.$new_img;
                         move_uploaded_file($tmp_name,$img_path);
-                
-                            $sql = "INSERT INTO withimage(image,username,email,gender,class,password) VALUES('$new_img','$username','$email','$gender','$class','$password')";
+                            $sql = "INSERT INTO users(image,username,gender,email,class,password) VALUES('$new_img','$username','$gender','$email','$class','$password')";
                             $result = mysqli_query($conn,$sql);
                             if(!$result){
                                 include 'error_popup';
