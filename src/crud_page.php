@@ -18,7 +18,7 @@ $query = $fluent->from('products');
 </head>
 
 <body>
-    <div class="min-h-screen bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8">
+    <div class=" bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8">
         
         <div class="sm:mx-auto sm:w-full sm:max-w-md flex justify-between items-baseline">
             <div>
